@@ -13,10 +13,10 @@ import { Status } from './types/Status';
 
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [todosToShow, setTodosToShow] = useState<Todo[]>(todos);
+  const [todosToShow, setTodosToShow] = useState<Todo[]>([]);
 
   const [query, setQuery] = useState('');
-  const [statusSelect, setstatusSelect] = useState<Status>('all');
+  const [statusSelect, setStatusSelect] = useState<Status>('all');
 
   const [loading, setLoading] = useState(false);
 
@@ -46,7 +46,7 @@ export const App: React.FC = () => {
   }, [query, statusSelect, todos]);
 
   const handleStatusSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setstatusSelect(event.target.value as Status);
+    setStatusSelect(event.target.value as Status);
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
